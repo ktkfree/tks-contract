@@ -44,7 +44,7 @@ jobs:
         git clone "https://${{secrets.BOT_GITHUB_TOKEN}}@github.com/ktkfree/tks-manifests.git"
         cd tks-manifests/${SERVICE}/overlay/${TARGET}
 
-        kustomize edit set image sktcloud/${SERVICE}:${TAG}
+        kustomize edit set image docker.io/sktcloud/${SERVICE}:${TAG}
         git add kustomization.yaml
         git commit --allow-empty -m "Set image tag to ${SERVICE} ${TAG}"
         git push origin main --force
